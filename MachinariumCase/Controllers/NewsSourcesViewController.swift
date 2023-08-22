@@ -54,6 +54,7 @@ class NewsSourcesViewController: UIViewController {
         let separatorView = UIView(frame: CGRect(x: 0, y: 0, width: newsSourceTableView.frame.width, height: 0.5))
         separatorView.backgroundColor = UIColor.gray
         newsSourceTableView.tableHeaderView = separatorView
+        
     }
     
     private func configureLoadingIndicator() {
@@ -69,7 +70,7 @@ class NewsSourcesViewController: UIViewController {
         if segue.identifier == "toNewsListVC" {
             if let newsSource = sender as? NewsSource {
                 if let destinationVC = segue.destination as? NewsListViewController {
-                    destinationVC.selectedNewsSourceID = newsSource.id ?? ""
+                    destinationVC.selectedNewsSource = newsSource
                 }
             }
         }
@@ -133,6 +134,7 @@ extension NewsSourcesViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         cell.setCell(title: item.name, description: item.description)
+        cell.selectionStyle = .none
         
         return cell
     }

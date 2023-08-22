@@ -3,4 +3,102 @@
    uuid = "7CF4F16B-64CA-406C-A67F-2F587F427066"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBDAD36D-2201-4391-BF23-BC798CEE15D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachinariumCase/Views/Components/SliderView/HeaderCollectionReusableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "moveToNextIndex()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DBDAD36D-2201-4391-BF23-BC798CEE15D9 - 53ecd1db09c38939"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachinariumCase.HeaderCollectionReusableView.moveToNextIndex() -&gt; ()"
+                  moduleName = "MachinariumCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufziyayildirim/Desktop/MachinariumCase/MachinariumCase/Views/Components/SliderView/HeaderCollectionReusableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "DBDAD36D-2201-4391-BF23-BC798CEE15D9 - 53ecd1db09c38918"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachinariumCase.HeaderCollectionReusableView.moveToNextIndex() -&gt; ()"
+                  moduleName = "MachinariumCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufziyayildirim/Desktop/MachinariumCase/MachinariumCase/Views/Components/SliderView/HeaderCollectionReusableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D04A5FD1-821B-46E1-A42A-9E7402D21465"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachinariumCase/Views/Components/SliderView/HeaderCollectionReusableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "startTimer()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D04A5FD1-821B-46E1-A42A-9E7402D21465 - 20fe8b502b7a50b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachinariumCase.HeaderCollectionReusableView.startTimer() -&gt; ()"
+                  moduleName = "MachinariumCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufziyayildirim/Desktop/MachinariumCase/MachinariumCase/Views/Components/SliderView/HeaderCollectionReusableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "D04A5FD1-821B-46E1-A42A-9E7402D21465 - 20fe8b502b7a568"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachinariumCase.HeaderCollectionReusableView.startTimer() -&gt; ()"
+                  moduleName = "MachinariumCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufziyayildirim/Desktop/MachinariumCase/MachinariumCase/Views/Components/SliderView/HeaderCollectionReusableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

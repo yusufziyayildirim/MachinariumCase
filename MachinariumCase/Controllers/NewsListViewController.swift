@@ -14,7 +14,7 @@ protocol NewsListViewControllerDelegate: AnyObject {
 }
 
 class NewsListViewController: UIViewController {
-
+    
     @IBOutlet weak var newsCollectionView: UICollectionView!
     
     let viewModel = NewsListViewModel(service: NewsService())
@@ -22,16 +22,19 @@ class NewsListViewController: UIViewController {
     let loadingIndicator = UIActivityIndicatorView(style: .large)
     let newsCell = NewsCollectionViewCell()
     
-    lazy var selectedNewsSourceID = String()
+    var selectedNewsSource: NewsSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        title = selectedNewsSource?.name
+        
         configureNewsCollectionView()
         configureLoadingIndicator()
         
+        
         viewModel.view = self
-        viewModel.getNews(from: selectedNewsSourceID)
+        viewModel.getNews(from: selectedNewsSource?.id ?? "")
         //viewModel.startRefreshingTimer()
     }
     
@@ -41,11 +44,7 @@ class NewsListViewController: UIViewController {
         
         newsCollectionView.register(newsCell.nib, forCellWithReuseIdentifier: newsCell.id)
         
-        newsCollectionView.register(
-            HeaderCollectionReusableView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: HeaderCollectionReusableView.id
-        )
+        newsCollectionView.register(HeaderCollectionReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.id)
     }
     
     private func configureLoadingIndicator() {
@@ -56,7 +55,7 @@ class NewsListViewController: UIViewController {
         
         loadingIndicator.startAnimating()
     }
-
+    
 }
 
 // MARK: - newsCollectionView Delegate and DataSource
@@ -71,6 +70,10 @@ extension NewsListViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         
+        let lineView = UIView(frame: CGRect(x: 0, y: cell.bounds.height - 1, width: cell.bounds.width, height: 0.5))
+        lineView.backgroundColor = UIColor.systemGray
+        cell.addSubview(lineView)
+        
         cell.setCell(with: viewModel.news[indexPath.row])
         
         return cell
@@ -80,20 +83,29 @@ extension NewsListViewController: UICollectionViewDelegate, UICollectionViewData
         CGSize(width: newsCollectionView.frame.width, height: 320)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         CGSize(width: newsCollectionView.frame.width, height: 350)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.id, for: indexPath) as! HeaderCollectionReusableView
-           
-            headerView.sliderNews = viewModel.sliderNews
-            return headerView
-        }
-        return UICollectionReusableView()
-    }
     
+        guard kind == UICollectionView.elementKindSectionHeader,
+              let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.id, for: indexPath) as? HeaderCollectionReusableView else {
+            return UICollectionReusableView()
+        }
+        
+        headerView.configureSliderCollectionView(sliderNews: viewModel.sliderNews)
+        
+        let lineView = UIView(frame: CGRect(x: 0, y: headerView.bounds.height - 1, width: headerView.bounds.width, height: 0.3))
+        lineView.backgroundColor = UIColor.systemGray
+        headerView.addSubview(lineView)
+        
+        return headerView
+    }
 }
 
 // MARK: - NewsListViewControllerDelegate for ViewModel

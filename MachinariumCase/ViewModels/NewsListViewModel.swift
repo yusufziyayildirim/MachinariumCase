@@ -53,6 +53,7 @@ extension NewsListViewModel: NewsListViewModelProtocol{
             case .success(let response):
                 self.news = response.news ?? []
                 self.sliderNews = Array(self.news.prefix(3))
+                self.news.removeFirst(3)
                 
                 self.view?.reloadNewsCollectionView()
                 self.view?.changeLoadingIndicatorStatus()
