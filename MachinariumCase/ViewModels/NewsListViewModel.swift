@@ -14,7 +14,7 @@ protocol NewsListViewModelProtocol {
     func startRefreshingTimer()
 }
 
-class NewsListViewModel {
+final class NewsListViewModel {
     
     // MARK: - Service
     private let service: NewsServiceProtocol?

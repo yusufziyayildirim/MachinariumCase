@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NewsMockDataService: NewsServiceProtocol{
+final class NewsMockDataService: NewsServiceProtocol{
     
     // Mock News Sources
     func getNewsSources(completion: @escaping (Result<NewsSourcesResponse, Error>) -> Void) {

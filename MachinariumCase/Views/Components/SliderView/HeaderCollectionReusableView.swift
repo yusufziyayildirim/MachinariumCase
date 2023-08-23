@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderCollectionReusableView: UICollectionReusableView {
+final class HeaderCollectionReusableView: UICollectionReusableView {
     
     static public let id = "HeaderCollectionReusableView"
     static public let nib = UINib(nibName: HeaderCollectionReusableView.id, bundle: nil)

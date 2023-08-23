@@ -13,7 +13,7 @@ protocol NewsSourcesViewControllerDelegate: AnyObject {
     func changeLoadingIndicatorStatus()
 }
 
-class NewsSourcesViewController: UIViewController {
+final class NewsSourcesViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var newsSourceTableView: UITableView!

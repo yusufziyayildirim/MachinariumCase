@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class NewsCollectionViewCell: UICollectionViewCell {
+final class NewsCollectionViewCell: UICollectionViewCell {
     
     static public let id = "newsCollectionViewCell"
     static public let nib = UINib(nibName: "NewsCollectionViewCell", bundle: nil)

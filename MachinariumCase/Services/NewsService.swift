@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NewsService: NewsServiceProtocol{
+final class NewsService: NewsServiceProtocol{
    
     private let manager: NetworkManager? = DependencyContainer.shared.resolve()
     

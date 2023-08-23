@@ -7,7 +7,7 @@
 
 import CoreData
 
-class CoreDataManager {
+final class CoreDataManager {
     static let shared = CoreDataManager()
     
     enum CoreDataError: Error {

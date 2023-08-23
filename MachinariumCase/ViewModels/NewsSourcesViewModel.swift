@@ -14,7 +14,7 @@ protocol NewsSourcesViewModelProtocol {
     func updateNewsTableWithSelectedCategories(with selectedCategories: Set<Category.RawValue>)
 }
 
-class NewsSourcesViewModel {
+final class NewsSourcesViewModel {
     
     // MARK: - Service
     private let service: NewsServiceProtocol?
