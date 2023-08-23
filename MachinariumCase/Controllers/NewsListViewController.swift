@@ -34,7 +34,7 @@ class NewsListViewController: UIViewController {
         
         viewModel.view = self
         viewModel.getNews(from: selectedNewsSource?.id ?? "")
-        //viewModel.startRefreshingTimer()
+        viewModel.startRefreshingTimer()
     }
     
     private func configureNewsCollectionView() {
