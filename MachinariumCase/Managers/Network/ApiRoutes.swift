@@ -9,7 +9,7 @@ import Foundation
 
 enum ApiRoutes {
     static let baseUrl = "https://newsapi.org/v2"
-    static let apiKey = "0c0b64ca79094998a4ff634c284f3b56"
+    static let apiKey = "85de1d6663ee467082fe162aa9d98391"
     
     //NewsApi Endpoints
     static let newsSources = "\(baseUrl)/sources"

@@ -23,9 +23,6 @@ class NewsSourcesViewController: UIViewController {
     let loadingIndicator = UIActivityIndicatorView(style: .large)
    
     var selectedCategories: Set<Category.RawValue> = []
-    
-    let categoryCell = CategoryCollectionViewCell()
-    let newsSourceCell = SourceTableViewCell()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +38,13 @@ class NewsSourcesViewController: UIViewController {
     private func configureCategoryCollectionView() {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
-        categoryCollectionView.register(categoryCell.nib, forCellWithReuseIdentifier: categoryCell.id)
+        categoryCollectionView.register(CategoryCollectionViewCell.nib, forCellWithReuseIdentifier: CategoryCollectionViewCell.id)
     }
     
     private func configureNewsSourceTableView() {
         newsSourceTableView.delegate = self
         newsSourceTableView.dataSource = self
-        newsSourceTableView.register(newsSourceCell.nib, forCellReuseIdentifier: newsSourceCell.id)
+        newsSourceTableView.register(SourceTableViewCell.nib, forCellReuseIdentifier: SourceTableViewCell.id)
         
         newsSourceTableView.separatorInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
         
@@ -99,7 +96,7 @@ extension NewsSourcesViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCell.id, for: indexPath) as? CategoryCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.id, for: indexPath) as? CategoryCollectionViewCell else {
             return UICollectionViewCell()
         }
         
@@ -121,7 +118,7 @@ extension NewsSourcesViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: newsSourceCell.id, for: indexPath) as? SourceTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SourceTableViewCell.id, for: indexPath) as? SourceTableViewCell else {
             return UITableViewCell()
         }
         

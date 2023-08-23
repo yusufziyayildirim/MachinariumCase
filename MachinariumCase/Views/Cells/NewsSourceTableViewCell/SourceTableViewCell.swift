@@ -9,8 +9,8 @@ import UIKit
 
 final class SourceTableViewCell: UITableViewCell {
 
-    public let id = "newsSourceTableViewCell"
-    public let nib = UINib(nibName: "SourceTableViewCell", bundle: nil)
+    static public let id = "newsSourceTableViewCell"
+    static public let nib = UINib(nibName: "SourceTableViewCell", bundle: nil)
     
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var descriptionLabel: UILabel!

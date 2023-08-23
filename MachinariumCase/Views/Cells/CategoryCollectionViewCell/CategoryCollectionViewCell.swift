@@ -9,8 +9,8 @@ import UIKit
 
 final class CategoryCollectionViewCell: UICollectionViewCell {
 
-    public let id = "categoryCollectionViewCell"
-    public let nib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
+    static public let id = "categoryCollectionViewCell"
+    static public let nib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
     
     @IBOutlet weak private var bgView: UIView!
     @IBOutlet weak private var statusImage: UIImageView!

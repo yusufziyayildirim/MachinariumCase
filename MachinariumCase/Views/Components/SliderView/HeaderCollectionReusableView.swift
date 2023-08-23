@@ -17,7 +17,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     lazy var sliderNews = [News]()
     
-    private let newsCell = NewsCollectionViewCell()
     private var timer: Timer?
     private var currentIndex = 0
     
@@ -30,7 +29,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         self.sliderNews = sliderNews
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
-        sliderCollectionView.register(newsCell.nib, forCellWithReuseIdentifier: newsCell.id)
+        sliderCollectionView.register(NewsCollectionViewCell.nib, forCellWithReuseIdentifier: NewsCollectionViewCell.id)
         
         pageControl.numberOfPages = sliderNews.count
         pageControl.currentPage = currentIndex
@@ -72,7 +71,7 @@ extension HeaderCollectionReusableView: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newsCell.id, for: indexPath) as? NewsCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.id, for: indexPath) as? NewsCollectionViewCell else {
             return UICollectionViewCell()
         }
         

@@ -20,7 +20,6 @@ class NewsListViewController: UIViewController {
     let viewModel = NewsListViewModel(service: NewsService())
     
     let loadingIndicator = UIActivityIndicatorView(style: .large)
-    let newsCell = NewsCollectionViewCell()
     
     var selectedNewsSource: NewsSource?
     
@@ -42,7 +41,7 @@ class NewsListViewController: UIViewController {
         newsCollectionView.delegate = self
         newsCollectionView.dataSource = self
         
-        newsCollectionView.register(newsCell.nib, forCellWithReuseIdentifier: newsCell.id)
+        newsCollectionView.register(NewsCollectionViewCell.nib, forCellWithReuseIdentifier: NewsCollectionViewCell.id)
         
         newsCollectionView.register(HeaderCollectionReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.id)
     }
@@ -66,7 +65,7 @@ extension NewsListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newsCell.id, for: indexPath) as? NewsCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.id, for: indexPath) as? NewsCollectionViewCell else {
             return UICollectionViewCell()
         }
         

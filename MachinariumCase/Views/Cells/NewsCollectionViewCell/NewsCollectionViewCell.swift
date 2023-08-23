@@ -10,8 +10,8 @@ import SDWebImage
 
 class NewsCollectionViewCell: UICollectionViewCell {
     
-    public let id = "newsCollectionViewCell"
-    public let nib = UINib(nibName: "NewsCollectionViewCell", bundle: nil)
+    static public let id = "newsCollectionViewCell"
+    static public let nib = UINib(nibName: "NewsCollectionViewCell", bundle: nil)
     
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var newsTitleLabel: UILabel!
